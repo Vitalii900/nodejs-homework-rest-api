@@ -38,7 +38,6 @@ router.get('/:contactId', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const { error } = contactsSchema.validate(req.body);
-    console.log(error);
     if (error) {
       error.status = 400;
       error.message = 'missing required name field';
